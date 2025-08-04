@@ -56,6 +56,8 @@ PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 fi
 
 Access the SPIFFS file manager at:  
 http://10.1.1.1/admin.html
+<p align="center">
+  <img src="Fileman.webp" alt="File Manager Interface" width="600">
 
 Use it to:
 - Upload new `.bin` or `.elf` payloads
