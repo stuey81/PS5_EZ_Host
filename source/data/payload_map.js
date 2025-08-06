@@ -33,11 +33,11 @@ const payload_map = [
     {
         displayTitle: "etaHEN",
         description: "AIO HEN",
-        fileName: "etaHEN-2.0b.bin",
+        fileName: "etaHEN-2.2b.bin",
         author: "LightningMods, Buzzer, sleirsgoevy, ChendoChap, astrelsky, illusion, CTN, SiSTR0, Nomadic",
         projectSource: "https://github.com/etaHEN/etaHEN",
-        binarySource: "https://github.com/etaHEN/etaHEN/blob/360e7c0d2dddf4f4645599d51d652e707c0b717b/etaHEN-2.0b.bin",
-        version: "2.0b",
+        binarySource: "https://github.com/etaHEN/etaHEN/blob/main/etaHEN-2.2B%2Cbin",
+        version: "2.2b",
         toPort: 9021
     },
     {
@@ -125,11 +125,11 @@ const payload_map = [
     {
         displayTitle: "ps5debug",
         description: "Debugger (Experimental beta)",
-        fileName: "ps5debug_v1.0b3.elf",
+        fileName: "ps5debug_v1.0b5.elf",
         author: "SiSTR0, ctn123",
         projectSource: "https://github.com/GoldHEN/ps5debug",
-        binarySource: "https://github.com/GoldHEN/ps5debug/releases/download/1.0b3/ps5debug_v1.0b3.elf",
-        version: "1.0b3",
+        binarySource: "https://github.com/GoldHEN/ps5debug/releases/download/1.0b5/ps5debug_v1.0b5.elf",
+        version: "1.0b5",
         supportedFirmwares: ["3.", "4.", "5."],
         toPort: 9021
     },

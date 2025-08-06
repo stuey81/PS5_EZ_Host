@@ -1,17 +1,33 @@
 CACHE MANIFEST
-# v=269262
+# v20250805 – raw payloads (no .gz)
 
 CACHE:
 index.html
 main.css
-int64.js
-rop.js
 main.js
-umtx2.js
+int64.js
 custom_host_stuff.js
-syscalls.js
-psfree/psfree.js
 payload_map.js
+rop.js
+rop_slave.js
+syscalls.js
+umtx2.js
+ps5logo_compressed.png
+
+payloads/byepervisor.elf
+payloads/elfldr.elf
+payloads/etaHEN-2.2B.bin
+payloads/ftpsrv.elf
+payloads/gdbsrv.elf
+payloads/klogsrv.elf
+payloads/kstuff.elf
+payloads/libhijacker.elf
+payloads/ps5-versions.elf
+payloads/ps5debug_dizz.elf
+payloads/ps5debug_v1.0b5.elf
+payloads/rp-get-pin.elf
+payloads/shsrv.elf
+payloads/websrv.elf
 
 NETWORK:
 *
