@@ -75,20 +75,27 @@ void handleAdmin() {
   html += "</table></body></html>";
   server.send(200,"text/html",html);
 }
-
 // 4) Upload handler
 void handleUpload() {
   HTTPUpload& up = server.upload();
   if (up.status == UPLOAD_FILE_START) {
-    String fn = "/" + up.filename;
+    String base = up.filename;                 // strip any leading slash just in case
+    if (base.startsWith("/")) base.remove(0, 1);
+    String fn = "/payloads/" + base;           // <<< CHANGED: save under /payloads/
+
     SPIFFS.remove(fn);
-    File f = SPIFFS.open(fn,"w"); f.close();
+    File f = SPIFFS.open(fn, "w"); 
+    f.close();
+
   } else if (up.status == UPLOAD_FILE_WRITE) {
-    File f = SPIFFS.open("/" + up.filename,"a");
+    String base = up.filename;
+    if (base.startsWith("/")) base.remove(0, 1);
+    File f = SPIFFS.open("/payloads/" + base, "a");   // <<< CHANGED
     if (f) f.write(up.buf, up.currentSize);
     f.close();
+
   } else if (up.status == UPLOAD_FILE_END) {
-    server.sendHeader("Location","/admin",true);
+    server.sendHeader("Location", "/admin", true);
     server.send(303);
   }
 }
@@ -117,8 +124,23 @@ void handleDelete() {
     server.send(400,"text/plain","No file specified");
     return;
   }
-  String fn = "/" + server.arg("file");
-  if (SPIFFS.exists(fn)) SPIFFS.remove(fn);
+
+  String arg = server.arg("file"); // could be "foo.elf" or "payloads/foo.elf" or "/payloads/foo.elf"
+  arg.trim();
+
+  // Build candidates
+  String c0 = arg.startsWith("/") ? arg : "/" + arg;                             // "/foo.elf" or "/payloads/foo.elf"
+  String c1 = "/payloads/" + (arg.startsWith("/") ? arg.substring(1) : arg);     // "/payloads/foo.elf"
+
+  bool removed = false;
+  if (SPIFFS.exists(c0)) {
+    removed = SPIFFS.remove(c0);
+  }
+  if (!removed && SPIFFS.exists(c1)) {
+    removed = SPIFFS.remove(c1);
+  }
+
+  // (Optional) You could check 'removed' and show a message, but keeping your 303 flow:
   server.sendHeader("Location","/admin",true);
   server.send(303);
 }

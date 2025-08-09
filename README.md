@@ -1,5 +1,5 @@
 # PS5_EZ_Host by _-stuey-_
-Modern UMTX2 ESP32-S3 Jailbreak Host (v1.0)
+Modern UMTX2 ESP32-S3 Jailbreak Host (v1.2)
 <p align="center">
   <img src="screenshot_main.webp" alt="PS5 EZ Host UI Screenshot" width="600">
 </p>
@@ -10,11 +10,11 @@ Modern UMTX2 ESP32-S3 Jailbreak Host (v1.0)
 
 PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 firmware 1.xx–5.xx, built on the UMTX2 WebKit exploit and optimized for ESP32-S3 boards (16MB flash). This is the only known host offering:
 
-- Clean two-stage exploit UI (launch → payloads)
-- Built-in file manager (`/admin.html`) for hot-swapping `.bin` / `.elf` payloads
+- Clean two-stage exploit UI (launch → payloads) Based on idlesauce UMTX2
+- Built-in file manager (`/admin.html`) for hot-swapping `.bin` / `.elf` payloads 
 - SPIFFS-based hosting — no SD card needed
 - Gzip-capable payload support
-- Auto-flashing via `auto_flash.exe` (no Arduino or Python required)
+- Auto-flashing via `auto_flash.exe` (no Arduino or Python required) Just plug in your board, and this exe will detect your board, COM port, and flash it for you.
 - Compatible with any 16MB ESP32-S3 board using CP210x USB
 
 ---
@@ -35,7 +35,7 @@ PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 fi
 4. Important:  
    Do not close or exit the command prompt window until it says:  
    `Hard resetting via RTS pin...`  
-   This can take up to 20 seconds after flashing appears to be finished.
+   This can take up to 20 seconds after flashing appears to be finished. (Windows users, the window will close itself once its flashed - ignore this)
 
 ---
 
@@ -45,7 +45,7 @@ PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 fi
   SSID: PS5_EZ_HOST  
   Password: (leave blank)
 
-- Open the browser and go to:  
+- Open the browser on PC or via idlesauces media host or WWW browser (user guide redirect wont work) and go to:  
   http://10.1.1.1
 
 - Launch the exploit and send payloads from the list.
@@ -55,7 +55,7 @@ PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 fi
 ## File Manager (Payload Hot-Swap)
 
 Access the SPIFFS file manager at:  
-http://10.1.1.1/admin.html
+http://10.1.1.1/admin.html or by Pressing L2 at the main page.
 <p align="center">
   <img src="Fileman.webp" alt="File Manager Interface" width="600">
 
