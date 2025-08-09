@@ -41,7 +41,7 @@ PS5_EZ_Host is a self-contained, no-fuss jailbreak platform for PlayStation 5 fi
 
 ## How to Use
 
-- Connect your PS5 or PC to the Wi-Fi network:  
+- Connect your PS5 or PC to the Wi-Fi network: Make sure to select 2.4 GHz in advanced settings if your host isnt showing up. (If the PS5_EZ_HOST network shows up on your phones Wi-Fi but not on your console, this will be why)
   SSID: PS5_EZ_HOST  
   Password: (leave blank)
 
