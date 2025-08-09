@@ -1,5 +1,5 @@
 # PS5_EZ_Host by _-stuey-_
-Modern UMTX2 ESP32-S3 Jailbreak Host (v1.2)
+Modern UMTX2 ESP32-S3 Jailbreak Host (v1.0.2)
 <p align="center">
   <img src="screenshot_main.webp" alt="PS5 EZ Host UI Screenshot" width="600">
 </p>
